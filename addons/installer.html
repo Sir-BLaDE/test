@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuvio Addon - Búsqueda Prioritaria Castellano Español</title>
+</head>
+<body style="font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 2rem;">
+    <h1>🎬 Nuvio Addon: Búsqueda Prioritaria Castellano Español</h1>
+    
+    <p><strong>Versión:</strong> 1.0.0</p>
+    <p><strong>Autor:</strong> Nuvio Community</p>
+    
+    <h2>📦 Instalación</h2>
+    <p>Sigue estos pasos para instalar el addon:</p>
+    
+    <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+        <h3>Paso 1: Obtener el archivo ZIP</h3>
+        <p><strong>Opción A (Recomendada):</strong> Desde GitHub Releases:</p>
+        <ul>
+            <li>Sube este contenido a tu repositorio GitHub como <code>v1.0.0.zip</code></li>
+            <li>La URL sería: <code>https://raw.githubusercontent.com/tu-usuario/tu-repo/main/nuvio-search-es-priority.zip</code></li>
+        </ul>
+        
+        <h3>Paso 2: Instalar en Nuvio</h3>
+        <p>Viaja a:</p>
+        <code>Nuvio -> Gestionar Addons -> Instalar desde URL -> Pega tu URL de arriba</code>
+    </div>
+    
+    <h2>🚀 Características del addon</h2>
+    <ul style="margin-left: 1.5rem;">
+        <li><strong>✅ Prioridad castellano:</strong> Busca primero contenido en español peninsular y latinoamericano</li>
+        <li><strong>✅ Filtrado por país:</strong> Detecta variantes (ES-ES, ES-MX, ES-AR, etc.) automáticamente</li>
+        <li><strong>✅ Cache local:</strong> Reduce latencia entre consultas a AllDebrid/Nuvio</li>
+        <li><strong>✅ Normalización inteligente:</strong> Mantiene ñ (diferenciador clave) mientras elimina tildes para búsqueda amplia</li>
+        <li><strong>✅ Rate limit handling:</strong> Reintentos automáticos con backoff exponencial para evitar bloqueos TMDB</li>
+    </ul>
+    
+    <h2>⚙️ Uso del addon (después de instalar)</h2>
+    <pre style="background: #f0f0f0; padding: 1rem; border-radius: 4px; overflow-x: auto;">
+# Ejemplo de uso desde Python
+from nuvio_search_es_priority import build_search_plan
+
+plan, metadata = await build_search_plan(
+    api_key="TU_API_KEY_TMDB_AQUI",
+    stremio_type="movie",
+    raw_id="tt1234567",  # ID IMDB o TMDB
+    preferred_country="ES-ES",  # Auto-detect si vacio
+)
+
+print(f"Queries generadas: {plan.total_queries}")
+for priority, query in plan.queries_es_priority:
+    print(f"  [{priority}] {query}")
+    </pre>
+    
+    <h2>📜 Licencia</h2>
+    <p><code>MIT License</code> - Usalo para contenido libre de restricciones.</p>
+    
+    <hr style="margin: 2rem 0;">
+    
+    <p><em>Gracias por usar Nuvio y sus addons comunitarios! 🎉</em></p>
+</body>
+</html>
