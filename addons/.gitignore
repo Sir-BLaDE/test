@@ -1,0 +1,18 @@
+# Python bytecode
+*.pyc
+__pycache__/
+*.pyo
+
+# Cache del addon
+nuvio-cache-*.json
+cache/
+.nuviar_cache/
+
+# Sistema
+.env
+.DS_Store
+Thumbs.db
+
+# Archivos de Nuvio (no deben subir a GitHub)
+nuvio_search_es_priority.pyc
+*.log
