@@ -1,0 +1,15 @@
+{
+  "name": "nuvio-search-es-priority",
+  "version": "1.0.0",
+  "displayName": "Nuvio Addon: Búsqueda Prioritaria Castellano Español",
+  "description": "Addon de Nuvio para optimizar búsquedas priorizando contenido en castellano español (ES-ES y variantes latinas). Filtra italiano/francés/portugués automáticamente.",
+  "author": "Nuvio Community",
+  "repository": "https://github.com/nuvio-addons/search-es-priority",
+  "main": "nuvio_search_es_priority.py",
+  "scripts": {
+    "install": "@echo off\nset \"ADDON_PATH=C:\\Nuvio\\addons\"\ncopy \"%CD%\\nuvio_search_es_priority.py\" \"%ADDON_PATH%\" /Y 2>nul\necho Addon instalado correctamente a %ADDON_PATH%\nendlocal"
+  },
+  "keywords": ["nuvio", "addon", "castellano", "es-priority", "search", "themoviedb"],
+  "homepage": "https://github.com/nuvio-addons/search-es-priority",
+  "license": "MIT"
+}
